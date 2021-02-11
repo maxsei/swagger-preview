@@ -1,0 +1,195 @@
+openapi: 3.0.0
+info:
+  description: "test"
+  version: "0.0.1"
+  title: "pat deployment"
+servers:
+  - url: "/"
+tags:
+
+- name: "Namespace Deployment"
+  description: ""
+
+- name: "Namespaces"
+  description: ""
+
+- name: "Projects"
+  description: ""
+
+- name: "Project"
+  description: ""
+
+- name: "General"
+  description: ""
+
+- name: "Token"
+  description: ""
+
+- name: "hello-world-prd (namespace)"
+  description: ""
+
+- name: "Pods"
+  description: ""
+
+- name: "Pod"
+  description: ""
+
+- name: "Project Deployment"
+  description: ""
+
+paths:
+  namespacedeployment:
+    patch:
+      tags:
+      - "Namespace Deployment"
+      summary: "Env"
+      description: ""
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+    get:
+      tags:
+      - "Namespace Deployment"
+      summary: "Namespace Deployment"
+      responses:
+        200:
+          description: "successful operation"
+  project:
+    post:
+      tags:
+      - "Project"
+      summary: "Project"
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  authorize:
+    get:
+      tags:
+      - "Token"
+      summary: "Validate Token"
+      parameters:
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  namespace:
+    patch:
+      tags:
+      - "hello-world-prd (namespace)"
+      summary: "Namespace"
+      description: ""
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  namespacepod{% prompt &#39;Pod Name&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, false %}:
+    delete:
+      tags:
+      - "Pod"
+      summary: "Pod"
+      parameters:
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  namespacepod{% prompt &#39;Pod Name&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, false %}envs:
+    get:
+      tags:
+      - "Pod"
+      summary: "Envs"
+      parameters:
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  namespacepod{% prompt &#39;Pod Name&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, false %}log:
+    get:
+      tags:
+      - "Pod"
+      summary: "Logs"
+      parameters:
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+  projectdeployment:
+    delete:
+      tags:
+      - "Project Deployment"
+      summary: "Project Deployment"
+      description: ""
+      parameters:
+      - name: "Content-Type"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      - name: "X-Token"
+        in: "header"
+        schema:
+          type: "string"
+        description: ""
+        required: true
+      responses:
+        200:
+          description: "successful operation"
+    get:
+      tags:
+      - "Project Deployment"
+      summary: "Project Deployment"
+      responses:
+        200:
+          description: "successful operation"
